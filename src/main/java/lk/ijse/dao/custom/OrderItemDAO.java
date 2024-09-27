@@ -1,4 +1,11 @@
 package lk.ijse.dao.custom;
 
-public interface OrderItemDAO {
+import lk.ijse.dao.SuperDAO;
+import lk.ijse.entity.OrderItem;
+
+import java.util.List;
+
+public interface OrderItemDAO extends SuperDAO {
+
+    List<OrderItem> getByOrderId(int orderId);
 }

@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="OrderForm"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.OrderFormController">
+   <children>
+      <Label layoutX="84.0" layoutY="59.0" text="Orders">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="144.0" text="Order Id :" />
+      <TextField fx:id="txtOrderId" layoutX="165.0" layoutY="140.0" onAction="#txtOrderIdOnAction" />
+      <Label layoutX="411.0" layoutY="141.0" text="Customer Id :" />
+      <TextField fx:id="txtCustomerId" layoutX="507.0" layoutY="137.0" />
+      <Label layoutX="104.0" layoutY="224.0" text="Item Id  :" />
+      <TextField fx:id="txtItemId" layoutX="180.0" layoutY="220.0" onAction="#txtItemIdOnAction" />
+      <Label layoutX="384.0" layoutY="224.0" text="model  :" />
+      <TextField fx:id="txtModel" layoutX="460.0" layoutY="220.0" />
+      <Label layoutX="98.0" layoutY="269.0" text="unit price  :" />
+      <TextField fx:id="txtprice" layoutX="180.0" layoutY="265.0" />
+      <Label layoutX="398.0" layoutY="269.0" text="qty :" />
+      <TextField fx:id="txtQty" layoutX="456.0" layoutY="265.0" onAction="#txtQtyOnAction" />
+      <Button layoutX="582.0" layoutY="307.0" mnemonicParsing="false" onAction="#btnAddOnAction" text="Add" />
+      <TableView fx:id="orderTabel" layoutX="89.0" layoutY="340.0" prefHeight="200.0" prefWidth="647.0">
+        <columns>
+          <TableColumn fx:id="colItemId" prefWidth="130.0" text="Item Id" />
+          <TableColumn fx:id="colModel" prefWidth="166.0" text="Model" />
+            <TableColumn fx:id="colunitPrice" prefWidth="178.0" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="172.0" text="Quaintity" />
+        </columns>
+      </TableView>
+      <Button layoutX="623.0" layoutY="553.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" text="Place order" />
+   </children>
 </AnchorPane>
