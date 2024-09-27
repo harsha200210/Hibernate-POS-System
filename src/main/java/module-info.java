@@ -1,0 +1,2 @@
+module Hibernate.POS.System {
+}
